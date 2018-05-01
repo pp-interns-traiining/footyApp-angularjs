@@ -1,0 +1,14 @@
+<h3>Choose players?</h3>
+<ul>
+  Search:
+  <input ng-model="search" type="text">
+  <select ng-change="$ctrl.updatePlayerList()" ng-model="$ctrl.playerType">
+    <option value="keepers">Keepers</option>
+    <option value="defenders">Defenders</option>
+    <option value="midfielders">Midfielders</option>
+    <option value="forwards">Forwards</option>
+  </select>
+  <li ng-repeat="player in $ctrl.filteredPlayers | filter: search">
+    {{player | filterFn}}
+  </li>
+</ul>

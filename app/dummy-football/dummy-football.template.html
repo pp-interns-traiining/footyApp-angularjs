@@ -1,0 +1,11 @@
+<div ng-init="$ctrl.getPremierLeague()"></div>
+<h1>Football fantasy ?</h1>
+
+<div id="flex-container">
+  <div id="pitch">
+    <team-selected></team-selected>
+  </div>
+  <div id="players">
+    <player-list players="$ctrl.players" ng-if="$ctrl.players"></player-list>
+  </div>
+</div>
