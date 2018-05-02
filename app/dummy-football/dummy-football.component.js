@@ -7,6 +7,10 @@ class DummyFootballCtrl {
       console.log(this.players = response.data);
     })
   };
+
+  showPlayer(player) {
+    console.log('data inside parent: ', player);
+  }
 }
 
 DummyFootballCtrl.inject = ['$http'];

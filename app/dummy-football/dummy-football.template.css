@@ -31,3 +31,7 @@
     flex-direction: column;
     overflow-y: scroll;
   }
+
+  .list {
+    list-style: none;
+  }
