@@ -28,10 +28,9 @@ class PlayerListCtrl {
     );
   }
 
-  addPlayer(playerId) {
-    // alert(playerId);
-    this.onShowPlayer({
-      player: playerId
+  addPlayer(playerName) {
+    this.onAddPlayer({
+      player: playerName
     })
   }
 }
@@ -58,6 +57,6 @@ angular
     controller: PlayerListCtrl,
     bindings: {
       players: "<",
-      onShowPlayer: "&",
+      onAddPlayer: "&"
     }
 });

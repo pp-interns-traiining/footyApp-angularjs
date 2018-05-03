@@ -1,1 +1,8 @@
 <h1>TeamSelected</h1>
+<ul>
+  <li ng-repeat="player in $ctrl.team">
+    {{player}}
+    <button ng-click="$ctrl.removePlayer(player)">Remove player</button>
+  </li>
+</ul>
+<button ng-click="$ctrl.check()">Check?</button>

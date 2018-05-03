@@ -1,6 +1,7 @@
 class DummyFootballCtrl {
   constructor($http) {
     this.$http = $http;
+    this.team = [];
   }
   getPremierLeague() {
     this.$http.get('premier-league/premier.json').then((response) => {
@@ -8,8 +9,15 @@ class DummyFootballCtrl {
     })
   };
 
-  showPlayer(player) {
-    console.log('data inside parent: ', player);
+  addPlayer(player) {
+    this.team.push(player);
+    console.log('data inside parent: ', player, 'team', this.team);
+  }
+
+  removePlayer(player) {
+    let playerIndex = this.team.indexOf(player);
+
+    this.team = [...this.team.slice(0, playerIndex), ...this.team.slice(playerIndex + 1)]
   }
 }
 
