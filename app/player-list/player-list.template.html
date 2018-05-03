@@ -12,7 +12,7 @@
 <ul class="list">
   <li ng-repeat="player in $ctrl.filteredPlayers | filter: search">
     {{player | filterFn}}
-    <button ng-click="$ctrl.addPlayer(player.name)">Select player</button>
+    <button ng-click="$ctrl.addPlayer(player)">Select player</button>
   </li>
 </ul>
 </div>
