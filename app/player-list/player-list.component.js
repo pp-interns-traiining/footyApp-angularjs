@@ -1,6 +1,7 @@
 'use-strict';
 class PlayerListCtrl {
   constructor() {
+    this.demo = true;
   }
 
   $onInit() {
@@ -57,6 +58,7 @@ angular
     controller: PlayerListCtrl,
     bindings: {
       players: "<",
-      onAddPlayer: "&"
+      onAddPlayer: "&",
+      errors: "<"
     }
 });
