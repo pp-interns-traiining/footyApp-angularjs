@@ -17,7 +17,22 @@ class DummyFootballCtrl {
 
   getPremierLeague() {
     this.$http.get('premier-league/premier.json').then((response) => {
-      console.log(this.players = response.data);
+
+      console.log(this.players = response.data.map(item => {
+        if (this.positions.keeper.includes(item.position)) {
+          item.category = 'keeper';
+        }
+        if (this.positions.defenders.includes(item.position)) {
+          item.category = 'defenders';
+        }
+        if (this.positions.midfielders.includes(item.position)) {
+          item.category = 'midfielders';
+        }
+        if (this.positions.forwards.includes(item.position)) {
+          item.category = 'forwards';
+        }
+        return item;
+      }));
     })
   };
 
