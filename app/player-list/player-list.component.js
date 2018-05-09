@@ -1,6 +1,7 @@
 'use-strict';
 class PlayerListCtrl {
   constructor() {
+    this.demo = true;
   }
 
   $onInit() {
@@ -27,7 +28,15 @@ class PlayerListCtrl {
       player => filterPositions.includes(player.position)
     );
   }
+
+  addPlayer(playerName) {
+    this.onAddPlayer({
+      player: playerName
+    })
+  }
 }
+
+
 
 angular
   .module('dummyFootball')
@@ -36,18 +45,20 @@ angular
       return player.name + ": " + player.position;
     }
   })
-  .filter('positionSelected', function(data) {
-    console.log('data:', data);
-    return function filteredPlayers(player) {
-      console.log('player:',player);
-      return player.name;
-    }
-  })
+  // .filter('positionSelected', function(data) {
+  //   console.log('data:', data);
+  //   return function filteredPlayers(player) {
+  //     console.log('player:',player);
+  //     return player.name;
+  //   }
+  // })
   // .filter('myFilter', filterFn)
   .component('playerList', {
     templateUrl: 'player-list/player-list.template.html',
     controller: PlayerListCtrl,
     bindings: {
-      players: "<"
+      players: "<",
+      onAddPlayer: "&",
+      errors: "<"
     }
 });

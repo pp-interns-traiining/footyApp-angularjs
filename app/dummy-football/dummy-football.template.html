@@ -3,9 +3,9 @@
 
 <div id="flex-container">
   <div id="pitch">
-    <team-selected></team-selected>
+    <team-selected team="$ctrl.team" on-remove-player="$ctrl.removePlayer(player)"></team-selected>
   </div>
   <div id="players">
-    <player-list players="$ctrl.players" ng-if="$ctrl.players"></player-list>
+    <player-list players="$ctrl.players" errors="$ctrl.errors" on-add-player="$ctrl.addPlayer(player)" ng-if="$ctrl.players"></player-list>
   </div>
 </div>
